@@ -27,64 +27,51 @@ public static class Kernel
         if (!File.Exists(ConfigFile))
             UpdateConfig();
 
-        Config = JsonSerializer.Deserialize<Config>(File.ReadAllText(ConfigFile))!;
+        try
+        {
+            Config = JsonSerializer.Deserialize<Config>(File.ReadAllText(ConfigFile))!;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error reading config file: {e.Message}");
+        }
     }
 
     public static void SetAffinities()
     {
         var processes = Process.GetProcesses();
 
-        foreach (var app in Config.Apps)
+        foreach (var kvp in Config.AppsByGroup)
         {
-            var process = processes.FirstOrDefault(p => p.ProcessName.Split(' ').First() == app.Name);
-            if (process == null)
-                continue;
-
-            nint affinityMask = 0;
-
-            if (app.OnlyRealCores)
+            foreach (var app in kvp.Value)
             {
-                affinityMask = 0;
-                foreach (var core in CPU.Cores.Values)
-                    if (core.IsSMT)
-                        affinityMask |= 1 << core.LogicalCore;
-            }
+                app.ForceGroup = kvp.Key;
+                var process = processes.FirstOrDefault(p => p.ProcessName.Split(' ').First() == app.Name);
+                if (process == null)
+                    continue;
 
-            if (app.ForceGroup != null)
-            {
-                affinityMask = 0;
-                foreach (var core in CPU.CoresByGroup[app.ForceGroup.Value])
-                    if (app.OnlyRealCores && core.IsSMT)
-                        continue;
-                    else
-                        affinityMask |= 1 << core.LogicalCore;
-            }
+                nint affinityMask = 0;
 
-            if (app.DisableGroup != null)
-            {
-                foreach (var core in CPU.CoresByGroup[app.DisableGroup.Value])
-                    affinityMask &= ~(1 << core.LogicalCore);
-            }
-
-            if (app.SpecificCores.Count > 0)
-            {
-                affinityMask = 0;
-                foreach (var core in app.SpecificCores)
-                    affinityMask |= 1 << core;
-            }
-            try
-            {
-                if (process.ProcessorAffinity != affinityMask)
+                if (app.ForceGroup != null && app.ForceGroup.Value != PerformanceGroup.UnknownCore)
                 {
-                    process.ProcessorAffinity = affinityMask;
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"\nSet affinity for {process.ProcessName[..Math.Min(32, process.ProcessName.Length)]} (PID: {process.Id}) to {affinityMask}");
+                    affinityMask = 0;
+                    foreach (var core in CPU.CoresByGroup[app.ForceGroup.Value])
+                        affinityMask |= 1 << core.LogicalCore;
                 }
-            }
-            catch (Exception e)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\nError setting affinity for {process.ProcessName[..Math.Min(32, process.ProcessName.Length)]} (PID: {process.Id}): {e.Message}");
+                try
+                {
+                    if (process.ProcessorAffinity != affinityMask)
+                    {
+                        process.ProcessorAffinity = affinityMask;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"\nSet affinity for {process.ProcessName[..Math.Min(32, process.ProcessName.Length)]} (PID: {process.Id}) to {affinityMask}");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"\nError setting affinity for {process.ProcessName[..Math.Min(32, process.ProcessName.Length)]} (PID: {process.Id}): {e.Message}");
+                }
             }
         }
 
@@ -112,19 +99,19 @@ public static class Kernel
         var addedAny = false;
         foreach (var process in filteredProcesses)
         {
-            var app = Config.Apps.FirstOrDefault(a => a.Name == process);
+            var (group, app) = GetApp(process);
             if (app != null)
                 continue;
 
             addedAny = true;
             Console.WriteLine($"Adding {process} to config");
-            Config.Apps.Add(new AppCfg { Name = process, ForceGroup = PerformanceGroup.UltraLowPowerCore, DisableGroup = PerformanceGroup.UnknownCore, SpecificCores = [], OnlyRealCores = false });
+            Config.AppsByGroup[group].Add(new AppCfg { Name = process, ForceGroup = PerformanceGroup.UltraLowPowerCore });
         }
 
         if (addedAny || Config.Dirty)
         {
             Config.Dirty = false;
-            Config.Apps = [.. Config.Apps.OrderBy(a => a.Name).OrderByDescending(x=> x.FoundInForegroundTimes).ToList()];
+            Config.AppsByGroup = Config.AppsByGroup.OrderByDescending(x => x.Key).ToDictionary();
             Console.WriteLine($"Writing config file... ({ConfigFile})");
             File.WriteAllText(ConfigFile, JsonSerializer.Serialize(Config, new JsonSerializerOptions { WriteIndented = true }));
         }
@@ -152,5 +139,18 @@ public static class Kernel
         process.WaitForExit();
 
         return string.IsNullOrEmpty(error) ? output : error;
+    }
+
+    public static (PerformanceGroup, AppCfg?) GetApp(string name)
+    {
+        foreach (var group in Enum.GetValues<PerformanceGroup>())
+        {
+            Config.AppsByGroup.TryAdd(group, []);
+            foreach (var app in Config.AppsByGroup[group])
+                if (app.Name == name)
+                    return (group, app);
+        }
+
+        return (PerformanceGroup.UnknownCore, null);
     }
 }

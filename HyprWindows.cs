@@ -9,18 +9,27 @@ public static class HyprWindows
 
     public static void GetState()
     {
-        var hypr = Kernel.RunCommand("hyprctl", "activewindow -j");
+        try
+        {
+            var hypr = Kernel.RunCommand("hyprctl", "activewindow -j");
 
-        var app = JsonSerializer.Deserialize<Root>(hypr)!;
-        var appCfg = Kernel.Config.Apps.FirstOrDefault(a => a.Name == app.Class);
-        if (appCfg == null)
-            return;
+            var app = JsonSerializer.Deserialize<Root>(hypr)!;
+            var (group, appCfg) = Kernel.GetApp(app.Class);
+            if (appCfg == null)
+                return;
 
-        Kernel.Config.Apps.Remove(appCfg);
-        appCfg.IsForegroundApp = true;
-        appCfg.FoundInForegroundTimes++;
-        Kernel.Config.Apps.Add(appCfg);
-        Kernel.Config.Dirty = true;
+            if (appCfg.IsForegroundApp)
+                return;
+
+            Kernel.Config.AppsByGroup[group].Remove(appCfg);
+            appCfg.IsForegroundApp = true;
+            Kernel.Config.AppsByGroup[group].Add(appCfg);
+            Kernel.Config.Dirty = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Kernel: " + e.Message);
+        }
     }
     public record Root(
         [property: JsonPropertyName("address")] string Address,

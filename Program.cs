@@ -10,6 +10,6 @@ while (true)
     Kernel.ReadConfig();
     HyprWindows.GetState();
     Kernel.SetAffinities();
-    Console.Clear();
     Thread.Sleep(5000);
+    Console.Clear();
 }
