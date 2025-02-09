@@ -1,690 +1,361 @@
 {
-  "Apps": [
-    {
-      "Name": "systemd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "oom_reaper",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "hwrng",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "systemd-journald",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "systemd-userdbd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "psimon",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "systemd-timesyncd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "systemd-udevd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "nv_queue",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "nv_open_q",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "nvidia-modeset/kthread_q",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "nvidia-modeset/deferred_close_kthread_q",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "UVM",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "NetworkManager",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "systemd-logind",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "bluetoothd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "vmnet-bridge",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "wpa_supplicant",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "agetty",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "ly-dm",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "nginx",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "nginx:",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "Hyprland",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 0
-    },
-    {
-      "Name": "nvidia-drm/timeline-20",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "dconf-service",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "waybar",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "polkit-gnome-authentication-agent-1",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "udiskie",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "nm-applet",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "wl-paste",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "bash",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "thunar",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "swaync",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "udisksd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "Xwayland",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 1
-    },
-    {
-      "Name": "polkitd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "upowerd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "xdg-document-portal",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "xdg-permission-store",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "fusermount3",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "rtkit-daemon",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "pipewire",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "wireplumber",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "pipewire-pulse",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "obexd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "swww-daemon",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "xdg-desktop-portal-hyprland",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "xdg-desktop-portal",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "NFSv4",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "sh",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "zsh",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "jamesdsp",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "gnome-keyring-daemon",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "keepassxc",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 1
-    },
-    {
-      "Name": "evolution-source-registry",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "evolution-alarm-notify",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "evolution-calendar-factory",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "evolution-addressbook-factory",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "alacritty",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "ydotoold",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "xinput",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "python3",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "rpcbind",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "rpc.statd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "mpv",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "dirmngr",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "openvpn3-systemd",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "openvpn3-service-sessionmgr",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "openvpn3-service-log",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "openvpn3-service-client",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "openvpn3-service-netcfg",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "chrome_crashpad_handler",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "gajim",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 0,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "Discord",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 0,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "discord",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 0,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "evolution",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 0,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "WebKitNetworkProcess",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "bwrap",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "WebKitWebProcess",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "cliphist",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "code",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 3,
-      "ForceGroup": 0
-    },
-    {
-      "Name": "Code",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 0
-    },
-    {
-      "Name": "nvidia",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "chromium",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 0
-    },
-    {
-      "Name": "keepassxc-proxy",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "htop",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "sudo",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "micro",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "Microsoft.CodeAnalysis.LanguageServer",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "sm-agent",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "Microsoft.VisualStudio.Code.Server",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "Microsoft.ServiceHub.Controller",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "Microsoft.VisualStudio.Code.ServiceHost",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 2
-    },
-    {
-      "Name": "dotnet",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 1
-    },
-    {
-      "Name": "systemd-userwork:",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "vsdbg-ui",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 0
-    },
-    {
-      "Name": "affinity-daemon",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    },
-    {
-      "Name": "btop",
-      "SpecificCores": [],
-      "OnlyRealCores": false,
-      "DisableGroup": 4,
-      "ForceGroup": 3
-    }
-  ]
+  "AppsByGroup": {
+    "UnknownCore": [
+    ],
+    "UltraLowPowerCore": [
+      {
+        "Name": "nvtop",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "git",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "ssh",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nm-dispatcher",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "sudo",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "cpuUsage.sh",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "sleep",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "systemd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "oom_reaper",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "hwrng",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "systemd-journald",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "systemd-userdbd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "psimon",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "systemd-timesyncd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "systemd-udevd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nv_queue",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nv_open_q",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nvidia-modeset/kthread_q",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nvidia-modeset/deferred_close_kthread_q",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "UVM",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nvidia",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "NetworkManager",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "systemd-logind",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "vmnet-bridge",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "bluetoothd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "wpa_supplicant",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "agetty",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "ly-dm",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "openvpn3-systemd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nginx",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nginx:",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "openvpn3-service-sessionmgr",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "openvpn3-service-log",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "openvpn3-service-client",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "openvpn3-service-netcfg",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nvidia-drm/timeline-20",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "dconf-service",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "polkit-gnome-authentication-agent-1",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "blueman-applet",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "udiskie",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "nm-applet",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "wl-paste",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "bash",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "thunar",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "swaync",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "udisksd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "polkitd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "Xwayland",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "upowerd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "xdg-document-portal",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "xdg-permission-store",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "fusermount3",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "rtkit-daemon",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "pipewire",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "wireplumber",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "pipewire-pulse",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "obexd",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "blueman-tray",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "swww-daemon",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "xdg-desktop-portal-hyprland",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "xdg-desktop-portal",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "sh",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "zsh",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "chrome_crashpad_handler",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "keepassxc-proxy",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "jamesdsp",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "alacritty",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "sm-agent",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "dotnet",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "btop",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "gnome-keyring-daemon",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "systemd-userwork:",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "affinity-daemon",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "waybar",
+        "IsForegroundApp": true
+      }
+    ],
+    "EfficiencyCore": [
+      {
+        "Name": "vsdbg-ui",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "Discord",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "discord",
+        "IsForegroundApp": true
+      },
+      {
+        "Name": "gajim",
+        "IsForegroundApp": true
+      }
+    ],
+    "PerformanceCore": [],
+    "HighPerformanceCore": [
+      {
+        "Name": "Hyprland",
+        "IsForegroundApp": true
+      },
+      {
+        "Name": "Microsoft.VisualStudio.Code.Server",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "Microsoft.ServiceHub.Controller",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "Microsoft.VisualStudio.Code.ServiceHost",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "Microsoft.CodeAnalysis.LanguageServer",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "code",
+        "IsForegroundApp": true
+      },
+      {
+        "Name": "Code",
+        "IsForegroundApp": false
+      },
+      {
+        "Name": "chromium",
+        "IsForegroundApp": true
+      },
+      {
+        "Name": "tofi-run",
+        "IsForegroundApp": true
+      }
+    ]
+  }
 }
